@@ -1,0 +1,13 @@
+@import '../assets/scss/main';
+
+.app {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 2rem;
+}
+
+.app__content {
+  width: 100%;
+  gap: 2rem;
+  @include flex(column, flex-start, flex-start);
+}
