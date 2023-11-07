@@ -15,6 +15,7 @@ const Checkbox: FC<ICheckboxProps> = ({ value = false, onChange = () => {}, labe
 
   return (
     <button
+      type="button"
       role="checkbox"
       aria-checked={value}
       aria-label={label}

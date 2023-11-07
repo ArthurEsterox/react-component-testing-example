@@ -1,15 +1,12 @@
 import { useState } from 'react';
 
-import { Button, Checkbox, Loader } from '../components';
+import { Button, Checkbox, Loader, Switch } from '../components';
 
 import styles from './App.module.scss';
 
 const App = () => {
   const [isChecked, setIsChecked] = useState(false);
-
-  const handleChangeChecked = (value: boolean) => {
-    setIsChecked(value);
-  };
+  const [isSwitched, setIsSwitched] = useState(false);
 
   return (
     <div className={styles['app']}>
@@ -20,7 +17,9 @@ const App = () => {
 
         <Loader />
 
-        <Checkbox value={isChecked} onChange={handleChangeChecked} label="Check box" />
+        <Checkbox value={isChecked} onChange={setIsChecked} label="Check box" />
+
+        <Switch value={isSwitched} onChange={setIsSwitched} label="Switch" />
       </div>
     </div>
   );
