@@ -1,0 +1,86 @@
+@import '../../../assets/scss/main';
+
+.select {
+  position: relative;
+  z-index: 1;
+  display: flex;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &--open {
+    .select__button {
+      border-radius: 4px 4px 0 0;
+    }
+
+    .select__button-arrow {
+      transform: rotate(180deg);
+    }
+
+    .select__popup {
+      z-index: 1;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+.select__label {
+  @include visuallyHidden();
+}
+
+.select__button {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  @include flex(row, center, space-between);
+  transition: border-radius .2s ease, box-shadow .2s ease;
+
+  &:focus-visible {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.select__button-placeholder {
+  user-select: none;
+  max-width: 80%;
+  @include font(1rem, 400);
+  @include ellipsis();
+}
+
+.select__button-arrow {
+  margin-bottom: 1px;
+  transition: transform .2s ease;
+}
+
+.select__popup {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  max-height: 220px;
+  overflow-y: auto;
+  transition: transform .2s ease, opacity .2s ease, visibility .2s ease;
+}
+
+.select__popup-empty {
+  width: 100%;
+  padding: 10px;
+  user-select: none;
+  @include font(1.125rem, 500, $black, center);
+}

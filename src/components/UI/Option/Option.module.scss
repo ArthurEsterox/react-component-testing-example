@@ -1,0 +1,36 @@
+@import '../../../assets/scss/main';
+
+.option {
+  width: 100%;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  border: none;
+  text-align: left;
+  background-color: transparent;
+  font-size: 0.875rem;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: background-color .2s ease;
+
+  &[aria-selected="true"] {
+    background-color: #dcdcdc !important;
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &:focus-visible {
+    background-color: #dedede;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+    background-color: transparent !important;
+  }
+}
