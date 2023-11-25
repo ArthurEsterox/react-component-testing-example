@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button, Checkbox, Loader, Switch, Select } from '../components';
+import { Button, Checkbox, Loader, Switch, Select, Tooltip } from '../components';
 
 import styles from './App.module.scss';
 
@@ -31,6 +31,10 @@ const App = () => {
             options={[{ key: 'option1', label: 'Option 1' }, { key: 'option2', label: 'Option 2', disabled: true }, { key: 'option3', label: 'Option 3' }, { key: 'option4', label: 'Option 4' }, { key: 'option5', label: 'Option 5' }]}
           />
         </div>
+
+        <Tooltip style={{ marginLeft: '135px' }} tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta tempore quisquam dolorum, maiores facere facilis illo repellat libero atque! Ratione hic, repellendus deserunt asperiores adipisci eius.">
+          <button>TOOLTIP</button>
+        </Tooltip>
       </div>
     </div>
   );
